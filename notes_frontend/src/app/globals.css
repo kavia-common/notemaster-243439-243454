@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #000000;
-  --color-secondary: #FFFFFF;
-  --color-accent: #3B82F6;
-  --color-background: #FFFFFF;
+  --nm-bg: #f9fafb;
+  --nm-surface: #ffffff;
+  --nm-border: #e5e7eb;
+  --nm-text: #111827;
+  --nm-muted: #64748b;
+  --nm-primary: #3b82f6;
+  --nm-success: #06b6d4;
 }
 
 * {
@@ -17,10 +20,77 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: var(--color-background);
-  color: var(--color-primary);
+  background: var(--nm-bg);
+  color: var(--nm-text);
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.nm-card {
+  background: var(--nm-surface);
+  border: 1px solid var(--nm-border);
+  border-radius: 14px;
+}
+
+.nm-btn {
+  border: 1px solid var(--nm-border);
+  background: var(--nm-surface);
+  color: var(--nm-text);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.nm-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.nm-btnPrimary {
+  background: var(--nm-primary);
+  border-color: var(--nm-primary);
+  color: white;
+}
+
+.nm-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--nm-border);
+  color: var(--nm-muted);
+  background: #fff;
+  font-size: 12px;
+}
+
+.nm-input {
+  width: 100%;
+  border: 1px solid var(--nm-border);
+  background: white;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.nm-input:focus {
+  border-color: color-mix(in srgb, var(--nm-primary) 70%, white);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--nm-primary) 20%, white);
+}
+
+.nm-textarea {
+  width: 100%;
+  border: 1px solid var(--nm-border);
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 14px;
+  outline: none;
+  min-height: 46vh;
+  line-height: 1.4;
+  resize: vertical;
 }
